@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "306363815928",
+    "project_id": "framefolio-7239d",
+    "storage_bucket": "framefolio-7239d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306363815928:android:60999fc2ffcbeafe38e80d",
+        "android_client_info": {
+          "package_name": "com.photographerapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmZf9CJHCh9PcVnICm1rtgBnA4DEogjDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
