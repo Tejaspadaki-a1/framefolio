@@ -26,6 +26,6 @@
       "favicon": "./assets/favicon.png"
     },
 
-    "jsEngine": "jsc"
+    "jsEngine": "hermes"
   }
 }

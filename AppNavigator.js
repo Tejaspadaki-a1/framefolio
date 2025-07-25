@@ -1,11 +1,9 @@
 // AppNavigator.js
 
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { AuthContext } from './src/context/AuthContext';
-import { getDoc, doc } from 'firebase/firestore';
-import { db } from './src/utils/firebase';
+import { useAuth } from './src/context/AuthContext';
 
 // Auth Screens
 import LoginScreen from './src/auth/LoginScreen';
@@ -32,26 +30,9 @@ import RatingStars from './src/components/RatingStars';
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
-  const { user, loading } = useContext(AuthContext);
-  const [role, setRole] = useState(null);
-  const [roleLoading, setRoleLoading] = useState(true);
+  const { user, role, loading } = useAuth();
 
-  useEffect(() => {
-    const fetchUserRole = async () => {
-      if (user) {
-        const userRef = doc(db, 'users', user.uid);
-        const docSnap = await getDoc(userRef);
-        if (docSnap.exists()) {
-          setRole(docSnap.data().role); // 'user' or 'photographer'
-        }
-      }
-      setRoleLoading(false);
-    };
-
-    fetchUserRole();
-  }, [user]);
-
-  if (loading || roleLoading) return null; // Show splash or loader
+  if (loading) return null; // Show splash or loader
 
   return (
     <NavigationContainer>

@@ -18,9 +18,11 @@ export default function BookingScreen({ route, navigation }) {
       await addDoc(bookingRef, {
         userId: auth.currentUser.uid,
         photographerId: photographer.id,
+        photographerName: photographer.name || 'Unknown Photographer',
         name,
         notes,
         date: date.toISOString(),
+        time: date.toLocaleTimeString(),
         status: 'pending',
         createdAt: new Date(),
       });

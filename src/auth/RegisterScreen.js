@@ -1,6 +1,7 @@
 // src/auth/RegisterScreen.js
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text, StyleSheet, Picker, Alert } from 'react-native';
+import { View, TextInput, Button, Text, StyleSheet, Alert } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../utils/firebase';

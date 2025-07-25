@@ -1,6 +1,6 @@
 // src/components/RatingStars.js
 import React, { useState } from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text, TextInput, Button } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { db, auth } from '../utils/firebase';
 import { addDoc, collection } from 'firebase/firestore';

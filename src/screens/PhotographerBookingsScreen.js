@@ -24,7 +24,7 @@ export default function PhotographerBookingsScreen() {
       renderItem={({ item }) => (
         <View style={{ margin: 10, padding: 10, backgroundColor: '#eee' }}>
           <Text>User: {item.name}</Text>
-          <Text>Date: {item.date}</Text>
+          <Text>Date: {new Date(item.date).toLocaleDateString()}</Text>
           <Text>Time: {item.time}</Text>
           <Text>Notes: {item.notes}</Text>
         </View>
